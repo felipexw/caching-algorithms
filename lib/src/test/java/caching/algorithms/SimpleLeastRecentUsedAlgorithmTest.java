@@ -26,8 +26,8 @@ public class SimpleLeastRecentUsedAlgorithmTest {
 		lruAlgorithm.add(-510);
 		lruAlgorithm.add(1000);
 
-		final String expectedResult = " 423 664 663 -510 1000 ";
+		final String expectedResult = " 1000  -510  662  664  423 ";
 
-		Assertions.assertThat(expectedResult).isEqualTo(lruAlgorithm.lru());
+		Assertions.assertThat(lruAlgorithm.lru()).isEqualTo(expectedResult);
 	}
 }
