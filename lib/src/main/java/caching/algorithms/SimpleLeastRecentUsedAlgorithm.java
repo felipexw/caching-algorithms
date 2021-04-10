@@ -10,11 +10,15 @@ import java.util.LinkedList;
 public class SimpleLeastRecentUsedAlgorithm<T> {
 
 	private final LinkedHashSet<T> cache;
-	private final Integer capacity;
+	private Integer capacity;
 
 	public SimpleLeastRecentUsedAlgorithm(Integer capacity) {
 		this.capacity = capacity;
 		cache = new LinkedHashSet<>(capacity);
+	}
+	
+	public void setCapacity(Integer capacity) {
+		this.capacity = capacity;
 	}
 
 	public void add(T t) {
@@ -36,7 +40,7 @@ public class SimpleLeastRecentUsedAlgorithm<T> {
 			strBuilder.append(" "  + iterator.next() + " ");
 		}
 
-		return strBuilder.toString();
+		return strBuilder.toString().trim();
 	}
 
 }
